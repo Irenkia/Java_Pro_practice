@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Phrase</title>
+</head>
+<body>
+<h1>Phrase</h1>
+<h2>View phrase</h2>
+<p th:each="p: ${phrases}" th:text="${phrase}"></p>
+</body>
+</html>

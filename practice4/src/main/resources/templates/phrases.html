@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Phrases</title>
+</head>
+<body>
+<h1>Phrases</h1>
+<h2>View phrases</h2>
+<table>
+    <tr>
+        <th>Phrases</th>
+    </tr>
+    <tr th:each="p: ${phrases}">
+        <td th:text="${p.phrase}"></td>
+    </tr>
+</table>
+</body>
+</html>
