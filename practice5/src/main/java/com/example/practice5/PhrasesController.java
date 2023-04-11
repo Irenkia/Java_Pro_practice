@@ -32,7 +32,7 @@ public class PhrasesController {
         }
     }
 
-    //        1 version
+    //        1 version ( 1 phrase)
     @PostMapping("/phrase")
     public ResourceIdHolder postPhrase(@RequestBody @Validated String phrase) {
         var resId = new ResourceIdHolder(phrases.size() + 1);
@@ -40,7 +40,7 @@ public class PhrasesController {
         phrases.put(resId.getId(), resPhrase.getPhrase());
         return resId;
     }
-    //        2 version
+    //        2 version ( 1 phrase)
 //        in Postman this method does not work
 //    @PostMapping("/phrase")
 //    public ResourceIdHolder postQuote(@RequestBody ResourcePhraseHolder phrase) {
@@ -50,21 +50,36 @@ public class PhrasesController {
 //    }
 
 
+
+    //        1 version ( many phrases)
     //        in Postman this method does not work
+//    @PostMapping("/phrases")
+//    public String postPhrase(@RequestBody String[] strings) {
+//        int size = phrases.size();
+//        if (strings.length != 0) {
+//            for (int i = 0; i < strings.length; i++) {
+//                phrases.put(size, strings[i]);
+//                size++;
+//            }
+//            return "status Ok";
+//        }
+//        return "Not Found";
+//    }
+
+    //        2 version ( many phrases)
     @PostMapping("/phrases")
-    public String postPhrase(@RequestBody String[] strings) {
+    public String postPhrase(@RequestBody ResourcePhraseHolder[] strings) {
+
         int size = phrases.size();
         if (strings.length != 0) {
             for (int i = 0; i < strings.length; i++) {
-                phrases.put(size, strings[i]);
+                phrases.put(size, strings[i].getPhrase());
                 size++;
             }
             return "status Ok";
         }
-
         return "Not Found";
     }
-
 
     @PutMapping("/phrases/{id}")
     public String updatePhrase(@PathVariable Integer id, @RequestBody String phrase) {
