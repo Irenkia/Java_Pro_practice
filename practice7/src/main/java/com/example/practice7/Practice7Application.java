@@ -12,7 +12,7 @@ public class Practice7Application {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(Practice7Application.class, args);
+        //SpringApplication.run(Practice7Application.class, args);
         var context = new AnnotationConfigApplicationContext(StudentConfig.class);
         Student s1 = context.getBean("student1",Student.class);
         System.out.println(s1.getName());
