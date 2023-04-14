@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="student-id" data-th-content="${student.id}"/>
+    <title>[[${student.title}]]; Java + Spring</title>
+</head>
+<body>
+<h1 data-th-text="${student.title}"></h1>
+<section id="description" data-th-text="${student.description}"></section>
+</body>
+</html>

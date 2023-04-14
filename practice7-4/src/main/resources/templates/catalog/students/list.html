@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Java + Spring</title>
+</head>
+<body>
+<h1>Catalog</h1>
+<ul>
+    <li data-th-each="student : ${students}" class="student">
+<!--        <a data-th-href="@{/catalog/students/{studentId}(studentId=${student.id})}"-->
+<!--           data-th-text="${student.title}"></a>-->
+    </li>
+</ul>
+</body>
+</html>
