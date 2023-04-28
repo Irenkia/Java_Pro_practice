@@ -108,7 +108,7 @@ FROM devices
 GROUP BY user_id
 ORDER BY count(user_id) DESC;
 
-SELECT users.name, devices.user_id,users.user_id,COUNT(users.user_id)
+SELECT users.user_id,users.name,users.surname,users.current_gender,COUNT(users.user_id)
 FROM users
 INNER JOIN devices ON users.user_id = devices.user_id
 GROUP BY users.user_id, devices.user_id
