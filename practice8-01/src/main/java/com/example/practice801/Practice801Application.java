@@ -19,7 +19,7 @@ public class Practice801Application {
         Class cl1 = test.getClass();
         System.out.println(cl1);
 
-        
+
     }
 
 }
