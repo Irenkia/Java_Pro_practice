@@ -108,12 +108,19 @@ FROM devices
 GROUP BY user_id
 ORDER BY count(user_id) DESC;
 
+1 version
 SELECT users.user_id,users.name,users.surname,users.current_gender,COUNT(users.user_id)
 FROM users
 INNER JOIN devices ON users.user_id = devices.user_id
 GROUP BY users.user_id, devices.user_id
 ORDER BY count(users.user_id) DESC;
 
+2version
+SELECT users.user_id,users.name,users.surname,COUNT(devices.user_id)
+FROM users
+INNER JOIN devices ON users.user_id = devices.user_id
+GROUP BY users.user_id, users.name,users.surname
+ORDER BY count(users.user_id) DESC;
 
 
 
