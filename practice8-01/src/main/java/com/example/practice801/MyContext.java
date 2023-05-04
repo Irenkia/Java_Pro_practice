@@ -15,10 +15,11 @@ public class MyContext {
 
             List<Class> result = new ArrayList<>();
             getBeans(new File("src/main/java/" + path), result);
+            Object myObj = result.getClass();
 
             var context = new MyContext();
 //            context.context = // todo: convert 'result' into map with objects as values.
-            context.beans.put(result.getClass(),context);
+            context.beans.put(result.getClass(),myObj);
             return context;
         } catch(ClassNotFoundException e) {
             return null;
