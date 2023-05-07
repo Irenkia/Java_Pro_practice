@@ -2,7 +2,7 @@ package com.example.practice12;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import java.sql.Statement;
 import java.sql.*;
 
 @SpringBootApplication
@@ -24,6 +24,10 @@ public class Practice12Application {
             System.out.println("name = " + rs.getString("name"));
             System.out.println("id = " + rs.getInt("user_id"));
         }
+
+        statement.close();
+        connection.close();
+
     }
 
 }
