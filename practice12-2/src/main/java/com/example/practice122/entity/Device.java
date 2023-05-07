@@ -8,8 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Device {
-    private Integer user_id;
+    private  int device_id;
+    private int user_id;
     private  String name;
-    private  String surname;
-    private  String phone;
+    private  String macaddr;
+
 }
