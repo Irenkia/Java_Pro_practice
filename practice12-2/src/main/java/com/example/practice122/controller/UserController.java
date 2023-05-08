@@ -1,5 +1,6 @@
 package com.example.practice122.controller;
 
+import com.example.practice122.dao.UserDao;
 import com.example.practice122.entity.User;
 import com.example.practice122.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ import java.util.Optional;
 //@Controller
 @RestController
 public class UserController {
-//    @Autowired
+    @Autowired
     private UserService userService;
 
     public UserController(UserService userService) {

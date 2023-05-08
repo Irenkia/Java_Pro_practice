@@ -20,7 +20,7 @@ public class UserDao implements Dao<Integer, User>{
     private static final UserDao INSTANCE_USER_DAO = new UserDao();
 
     private static final String FIND_ALL_SQL = """
-             SELECT * FROM user
+             SELECT * FROM users
             """;
 
 
@@ -29,12 +29,12 @@ public class UserDao implements Dao<Integer, User>{
             """;
 
     private static final String SAVE_SQL = """
-            INSERT INTO user (name, surname, phone, gender) 
+            INSERT INTO users (name, surname, phone, gender) 
             VALUES (?, ?, ?, ?);
             """;
 
     private static final String UPDATE_SQL = """
-            UPDATE user
+            UPDATE users
             SET user_id = ?,
                 name = ?,
                 surname = ?,
@@ -44,11 +44,11 @@ public class UserDao implements Dao<Integer, User>{
             """;
 
     private static final String DELETE_SQL = """
-            DELETE FROM user
+            DELETE FROM users
             WHERE user_id = ?
             """;
 
-    private UserDao() {
+    public UserDao() {
     }
 
     @Override
@@ -56,7 +56,7 @@ public class UserDao implements Dao<Integer, User>{
         try (Connection connection = ConnectionManager.createConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL_SQL)) {
             ResultSet resultSet = preparedStatement.executeQuery();
-            List<User> users = (List<User>)UserDao.getInstanceUserDao();
+            List<User> users = (List<User>) UserDao.getInstanceUserDao();
             while (resultSet.next()) {
                 users.add(buildUser(resultSet));
             }

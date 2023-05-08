@@ -19,7 +19,7 @@ import java.util.Optional;
 @NoArgsConstructor(force=true)
 public class UserService implements DaoService<Integer, User>{
 //    @Autowired
-    private UserDao userDao;
+    private final UserDao userDao;
 
     public UserService(UserDao userDao) {
         this.userDao = userDao;
